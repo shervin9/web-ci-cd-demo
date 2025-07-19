@@ -13,8 +13,8 @@ jobs:
             - name: check file
               run: |
                 echo "check file..."
-                test -f index.html
-                test -f styles.css
+                test -f index.html && echo "HTML found"
+                test -f styles.css && echo "style found"
                 echo "All files ok
 
     build:
