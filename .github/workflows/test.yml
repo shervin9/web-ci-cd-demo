@@ -19,7 +19,7 @@ jobs:
 
     build:
         name: build & deploy
-        runs-one: ubuntu-latest
+        runs-on: ubuntu-latest
         steps:
             - name: get code
               uses: actions/checkout@v4
