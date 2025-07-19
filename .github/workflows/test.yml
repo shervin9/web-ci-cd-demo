@@ -15,7 +15,7 @@ jobs:
                 echo "check file..."
                 test -f index.html && echo "HTML found"
                 test -f styles.css && echo "style found"
-                echo "All files ok
+                echo "All files ok"
 
     build:
         name: build & deploy
@@ -26,7 +26,7 @@ jobs:
             - name: build
               run: |
                 echo "build image"
-                docker build -t ci-cd-demo
+                docker build -t ci-cd-demo .
                 
 
 
