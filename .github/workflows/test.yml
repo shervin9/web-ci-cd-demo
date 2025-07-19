@@ -1,0 +1,32 @@
+name: ci-cd demo
+on:
+  push:
+    branches:
+      - main
+jobs:
+    test:
+        name: "Tste Code"
+        runs-on: ubuntu-latest
+        steps:
+            - name: get-Code
+              uses: actions/checkout@v4
+            - name: check file
+              run: |
+                echo "check file..."
+                test -f index.html
+                test -f styles.css
+                echo "All files ok
+
+    build:
+        name: build & deploy
+        runs-one: ubuntu-latest
+        steps:
+            - name: get code
+              uses: actions/checkout@v4
+            - name: build
+              run: |
+                echo "build image"
+                docker build -t ci-cd-demo
+                
+
+
