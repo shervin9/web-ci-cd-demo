@@ -3,6 +3,8 @@ on:
   push:
     branches:
       - main
+env:
+    DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
 jobs:
     test:
         name: "Tste Code"
@@ -15,7 +17,7 @@ jobs:
                 echo "check file..."
                 test -f index.html && echo "HTML found"
                 test -f styles.css && echo "style found"
-                echo "All files ok"
+                echo "All files ok $DOCKER_USERNAME"
 
     build:
         name: build & deploy
